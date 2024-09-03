@@ -1,8 +1,6 @@
 // script.js
 
 var header = document.getElementById("header");
-var menuIcon = document.getElementById("menu-icon");
-var navMenu = document.getElementById("nav-menu");
 var imageContainer = document.getElementById("image-container");
 
 header.addEventListener("mouseenter", function() {
@@ -31,21 +29,4 @@ window.addEventListener("scroll", function() {
     imageContainer.style.opacity = opacity;
 });
 
-// Toggle menu visibility on mobile
-menuIcon.addEventListener("click", function() {
-    if (navMenu.style.display === "flex") {
-        navMenu.style.display = "none";
-    } else {
-        navMenu.style.display = "flex";
-    }
-});
-
-// Ensure the transition is recalculated on resize (orientation change)
-window.addEventListener("resize", function() {
-    if (window.innerWidth > 768) {
-        navMenu.style.display = "flex"; // Show menu on desktop
-    } else {
-        navMenu.style.display = "none"; // Hide menu on mobile
-    }
-});
 

@@ -42,17 +42,6 @@ nav ul li a {
     font-weight: bold;
 }
 
-/* Hamburger menu */
-.menu-icon {
-    display: none;
-    cursor: pointer;
-    font-size: 24px;
-}
-
-#nav-menu {
-    display: flex;
-}
-
 /* Image container */
 .image-container {
     position: relative;
