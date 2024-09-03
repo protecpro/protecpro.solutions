@@ -1,6 +1,8 @@
 // script.js
 
 var header = document.getElementById("header");
+var menuIcon = document.getElementById("menu-icon");
+var navMenu = document.getElementById("nav-menu");
 var imageContainer = document.getElementById("image-container");
 
 header.addEventListener("mouseenter", function() {
@@ -11,14 +13,11 @@ header.addEventListener("mouseleave", function() {
     header.classList.add("transparent");
 });
 
-// script.js
 
 window.addEventListener("scroll", function() {
     var scrollPosition = window.scrollY;
-    var viewportHeight = window.innerHeight;
-
-    var fadeStart = viewportHeight * 0.1;  // Start fading at 10% of viewport height
-    var fadeEnd = viewportHeight * 0.5;    // Fully fade out at 50% of viewport height
+    var fadeStart = 150; // Start fading at this scroll position
+    var fadeEnd = 300;  // Fully fade out by this scroll position
     var opacity;
 
     if (scrollPosition <= fadeStart) {
@@ -32,23 +31,21 @@ window.addEventListener("scroll", function() {
     imageContainer.style.opacity = opacity;
 });
 
+// Toggle menu visibility on mobile
+menuIcon.addEventListener("click", function() {
+    if (navMenu.style.display === "flex") {
+        navMenu.style.display = "none";
+    } else {
+        navMenu.style.display = "flex";
+    }
+});
+
 // Ensure the transition is recalculated on resize (orientation change)
 window.addEventListener("resize", function() {
-    var scrollPosition = window.scrollY;
-    var viewportHeight = window.innerHeight;
-
-    var fadeStart = viewportHeight * 0.1;
-    var fadeEnd = viewportHeight * 0.5;
-    var opacity;
-
-    if (scrollPosition <= fadeStart) {
-        opacity = 1;
-    } else if (scrollPosition >= fadeEnd) {
-        opacity = 0;
+    if (window.innerWidth > 768) {
+        navMenu.style.display = "flex"; // Show menu on desktop
     } else {
-        opacity = 1 - (scrollPosition - fadeStart) / (fadeEnd - fadeStart);
+        navMenu.style.display = "none"; // Hide menu on mobile
     }
-
-    imageContainer.style.opacity = opacity;
 });
 
