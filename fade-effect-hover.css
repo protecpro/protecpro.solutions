@@ -1,0 +1,14 @@
+/* styles.css */
+.fade-in {
+    opacity: 0; /* Start with the image hidden */
+    animation: fadeInAnimation 2s ease-in forwards; /* Fade in over 2 seconds */
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

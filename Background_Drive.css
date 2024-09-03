@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Image from Google Drive</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .background {
+            height: 100vh;
+            background-image: url('https://drive.google.com/uc?export=view&id=1bnXGdaIipPfW4yDb8JchEsIoOrIRl_NO'); /* Replace with your actual link */
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+</body>
+</html>

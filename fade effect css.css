@@ -1,0 +1,16 @@
+.fade-element {
+    background-image: url(Protecpro.png);
+            border-radius: 20px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+    color: #fff;
+    padding: 50px;
+    text-align: center;
+    opacity: 0; /* Start fully transparent */
+    transition: opacity 0.5s ease;
+}
+
+.fade-element.visible {
+    opacity: 1; /* Fully visible when scrolled into view */
+}
