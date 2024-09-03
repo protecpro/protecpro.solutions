@@ -11,10 +11,14 @@ header.addEventListener("mouseleave", function() {
     header.classList.add("transparent");
 });
 
+// script.js
+
 window.addEventListener("scroll", function() {
     var scrollPosition = window.scrollY;
-    var fadeStart = 150; // Start fading at this scroll position
-    var fadeEnd = 300;  // Fully fade out by this scroll position
+    var viewportHeight = window.innerHeight;
+
+    var fadeStart = viewportHeight * 0.1;  // Start fading at 10% of viewport height
+    var fadeEnd = viewportHeight * 0.5;    // Fully fade out at 50% of viewport height
     var opacity;
 
     if (scrollPosition <= fadeStart) {
@@ -27,3 +31,24 @@ window.addEventListener("scroll", function() {
 
     imageContainer.style.opacity = opacity;
 });
+
+// Ensure the transition is recalculated on resize (orientation change)
+window.addEventListener("resize", function() {
+    var scrollPosition = window.scrollY;
+    var viewportHeight = window.innerHeight;
+
+    var fadeStart = viewportHeight * 0.1;
+    var fadeEnd = viewportHeight * 0.5;
+    var opacity;
+
+    if (scrollPosition <= fadeStart) {
+        opacity = 1;
+    } else if (scrollPosition >= fadeEnd) {
+        opacity = 0;
+    } else {
+        opacity = 1 - (scrollPosition - fadeStart) / (fadeEnd - fadeStart);
+    }
+
+    imageContainer.style.opacity = opacity;
+});
+

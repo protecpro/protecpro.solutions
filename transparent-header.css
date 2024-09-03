@@ -24,6 +24,7 @@ header.transparent {
            
 nav ul {
     list-style-type: none;
+    width: 100%;
     margin: 0;
     padding: 0;
     display: flex;
@@ -53,6 +54,17 @@ nav ul li a {
     opacity: 1;
     transition: opacity 1s ease-in-out; /* Smooth transition */
 }
+
+@media (max-width: 768px) {
+    .image-container {
+        height: 300px; /* Adjust height for smaller screens */
+    }
+
+    section {
+        padding: 30px 0;
+    }
+}
+
 
 main {
     margin-top: 60px; /* Adjust this to the header's height */
