@@ -4,59 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Protecpro.solutions</title>
-    <link rel="stylesheet" href="fade effect css.css">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            text-align: center;
-            background-image: url();
-            background-size: cover;
-            background-position: center;
-        }
-        header {
-            background: #2b2b2b;
-            color: #ffffff;
-            padding: 10px 0;
-            text-align: center;
-            
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
-        }
-        nav ul li a {
-            color: #ffffff;
-            text-decoration: none;
-        }
-        section {
-            padding: 20px;
-        }
-        footer {
-            background: #333;
-            color: #ffffff;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
-        }
-        .responsive-image {
-            width: 100%; /* Image fills the width of its container */
-            height: auto; /* Set a specific height or use 'auto' */
-            object-fit: cover; /* Ensures the image covers the container without distortion */
-        }
-    </style>
+   <link rel="stylesheet" href="transparent-header.css">
 </head>
 <body>
-    <header>
+    <header id="header">
         <nav>
             <ul>
                 <li><a href="#about">About Us</a></li>
@@ -64,50 +15,41 @@
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#clients">Clients</a></li>
                 <li><a href="#partners">Partners</a></li>
-
-                <div class="fade-element"></div>
-                <div class="content"></div>
-                <script src="fade effect java.js"></script>
             </ul>
         </nav>
     </header>
-
-    <section id="about">
-        <h2>About Us</h2>
-        <img src="Slide2.PNG" class="responsive-image">
-        <link rel="stylesheet" href="fade-effect-hover.css">
-    </section>
-
-    <section id="services">
-        <h2>Services</h2>
-        <img src="Slide7.PNG" class="responsive-image">
-        <img src="Slide8.PNG" class="responsive-image">
-        <img src="Slide10.PNG" class="responsive-image">
-        <img src="Slide11.PNG" class="responsive-image">
-        <img src="Slide13.PNG" class="responsive-image">
-
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <img src="Slide15.PNG" class="responsive-image">
-    </section>
-
-    <section id="clients">
-        <img src="Slide3.PNG" class="responsive-image">
-        <img src="Slide4.PNG" class="responsive-image">
-        <img src="Slide5.PNG" class="responsive-image">
-        <img src="Slide6.PNG" class="responsive-image">
-    </section>
-    
-    <section id="partners">
-        <h2>Partners</h2>
-        <img src="Slide9.PNG" class="responsive-image">
-        <img src="Slide14.PNG" class="responsive-image">
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Protecpro Phills. Inc. All rights reserved.</p>
-    </footer>
+    <main>
+        <section id="about">
+            <h2>About Us</h2>
+            <img src="Slide2.PNG" class="fade-image">
+        </section>
+        <section id="services">
+            <h2>Services</h2>
+            <img src="Slide7.PNG" class="responsive-image">
+            <img src="Slide8.PNG" class="responsive-image">
+            <img src="Slide10.PNG" class="responsive-image">
+            <img src="Slide11.PNG" class="responsive-image">
+            <img src="Slide13.PNG" class="responsive-image">
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <img src="Slide15.PNG" class="responsive-image">
+        </section>
+        <section id="clients">
+            <img src="Slide3.PNG" class="responsive-image">
+            <img src="Slide4.PNG" class="responsive-image">
+            <img src="Slide5.PNG" class="responsive-image">
+            <img src="Slide6.PNG" class="responsive-image">
+        </section>
+        <section id="partners">
+            <h2>Partners</h2>
+            <img src="Slide9.PNG" class="responsive-image">
+            <img src="Slide14.PNG" class="responsive-image">
+        </section>
+        <footer>
+            <p>&copy; 2024 Protecpro Phills. Inc. All rights reserved.</p>
+        </footer>
+    </main>
+    <script src="Transparent-header.js"></script>
 </body>
 </html>

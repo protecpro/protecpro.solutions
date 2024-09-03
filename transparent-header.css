@@ -1,0 +1,76 @@
+/* styles.css */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 1); /* Fully opaque initially */
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+    transition: background-color 0.3s, opacity 0.3s; /* Smooth transition */
+}
+
+header.transparent {
+    background-color: rgba(51, 51, 51, 0.5); /* Semi-transparent */
+}
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            text-align: center;
+        }
+           
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            margin-top: 60px; /* Adjust this to the header's height */
+            padding: 20px;
+        }
+
+        section {
+            padding: 50px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background: #333;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        
+        .responsive-image {
+            width: 100%; /* Image fills the width of its container */
+            height: auto; /* Set a specific height or use 'auto' */
+            object-fit: cover; /* Ensures the image covers the container without distortion */
+        }
