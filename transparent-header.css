@@ -12,6 +12,7 @@ header {
     left: 0;
     width: 100%;
     background-color: rgba(51, 51, 51, 1); /* Fully opaque initially */
+    background-size: cover;
     color: white;
     padding: 20px 0;
     z-index: 1000;
@@ -20,6 +21,7 @@ header {
 
 header.transparent {
     background-color: rgba(51, 51, 51, 0.5); /* Semi-transparent */
+    background-size: cover;
 }
            
 nav ul {
@@ -41,10 +43,11 @@ nav ul li a {
     font-weight: bold;
 }
 
+/* Image container */
 .image-container {
     position: relative;
     width: 100%;
-    height: 1000px; /* Adjust this height as needed */
+    height: 800px; /* Adjust this height as needed */
     overflow: hidden;
 }
         
@@ -54,17 +57,6 @@ nav ul li a {
     opacity: 1;
     transition: opacity 1s ease-in-out; /* Smooth transition */
 }
-
-@media (max-width: 768px) {
-    .image-container {
-        height: 300px; /* Adjust height for smaller screens */
-    }
-
-    section {
-        padding: 30px 0;
-    }
-}
-
 
 main {
     margin-top: 60px; /* Adjust this to the header's height */
@@ -83,6 +75,7 @@ section h2 {
 
 footer {
     background-color: #333;
+    background-size: cover;
     color: white;
     text-align: center;
     padding: 20px 0;
@@ -91,6 +84,60 @@ footer {
     bottom: 0;
     width: 100%;
     z-index: 1000;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .image-container {
+        height: 300px; /* Adjust height for smaller screens */
+    }
+
+    section {
+        padding: 30px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 8px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 8px 0;
+    }
+
+    .image-container {
+        height: 250px; /* Further adjust height for very small screens */
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    section {
+        padding: 20px 0;
+    }
+
+    footer {
+        padding: 15px 0;
+    }
 }
 
 .responsive-image {
