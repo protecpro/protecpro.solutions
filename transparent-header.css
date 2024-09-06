@@ -9,6 +9,7 @@ body {
 /* Navigation bar styling */
 .navbar {
     width: 100%;
+    box-sizing: border-box;
     background-color: #333;
     overflow: hidden;
     display: flex;
@@ -19,7 +20,7 @@ body {
     text-decoration: none;
     text-align: center;
     color: rgb(255, 255, 255);
-    padding: 14px 20px;
+    padding: 8px 14px;
     display: block;
     position: relative;
 }
@@ -40,13 +41,18 @@ body {
     width: 100%;
 }
 
-
 .navbar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+}
+
+/* Style for each nav item */
+.navbar li {
+    margin: 0;
 }
 
 .navbar ul li {
@@ -66,22 +72,30 @@ body {
     color: black;
 }
 
-/* Active link styling */
-.navbar a.active {
-    background-color: #575757; /* Darker background for active link */
-}
-
 /* Mobile Styles */
 @media (max-width: 768px) {
     .navbar ul {
         flex-direction: column; /* Stack items vertically on small screens */
-        width: 100%;
+        width: 100%; /* Full width on mobile */
+        background-color: #333; /* Ensure background color is applied */
     }
 
     .navbar a {
         padding: 10px; /* Adjust padding for smaller screens */
+        box-sizing: border-box; /* Ensure padding is included in width */
+        text-align: left; /* Align text to left for mobile */
+    }
+
+    /* Ensure the menu items don’t overflow */
+    .navbar {
+        position: relative;
+    }
+
+    .navbar.show ul {
+        display: flex; /* Show menu items when hamburger is clicked */
     }
 }
+
 
 /* Add a "hamburger" menu button for mobile view */
 .hamburger {
