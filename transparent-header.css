@@ -1,98 +1,126 @@
-/* styles.css */
-
+/* Basic styling for the body */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
+/* Navigation bar styling */
+.navbar {
     width: 100%;
-    background-color: rgba(51, 51, 51, 1); /* Fully opaque initially */
-    background-size: cover;
-    color: white;
-    padding: 10px 0;
-    z-index: 1000;
-    transition: background-color 0.3s, opacity 0.3s; /* Smooth transition */
-}
-
-header.transparent {
-    background-color: rgba(51, 51, 51, 0.5); /* Semi-transparent */
-    background-size: cover;
-}
-           
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    background-color: #333;
+    overflow: hidden;
     display: flex;
     justify-content: center;
 }
 
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #ffffff;
+.navbar a {
     text-decoration: none;
-    font-weight: bold;
-}
-
-/* Image container */
-.image-container {
+    color: black;
+    padding: 10px;
+    display: block;
     position: relative;
-    width: 100%;
-    height: 800px; /* Adjust this height as needed */
-    overflow: hidden;
-}
-        
-.image-container img {
-    width: 100%;
-    height: auto;
-    opacity: 1;
-    transition: opacity 1s ease-in-out; /* Smooth transition */
 }
 
-/* Main content */
-main {
-    margin-top: 60px; /* Adjust this to the header's height */
-    padding: 20px;
+/* Indicator for Active Navigation */
+.navbar a.active {
+    color: blue; /* Change color for the active link */
 }
 
-section {
-    padding: 50px 0;
-    border-bottom: 1px solid #ddd;
-}
-
-section h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-footer {
-    background-color: #333;
-    background-size: cover;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 20px;
-    position: relative;
+.navbar a.active::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: blue; /* Underline color for the active link */
+    position: absolute;
+    left: 0;
     bottom: 0;
     width: 100%;
-    z-index: 1000;
 }
 
 
-.responsive-image {
-    width: 100%; /* Image fills the width of its container */
-    height: auto; /* Set a specific height or use 'auto' */
-    object-fit: cover; /* Ensures the image covers the container without distortion */
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
-html {
-    scroll-behavior: smooth;
+.navbar ul li {
+    float: left;
+}
+
+.navbar ul li a {
+    display: block;
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.navbar ul li a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+/* Slider container */
+.slider {
+    position: relative;
+    max-width: 100%;
+    margin: 40px auto;
+    overflow: hidden;
+}
+
+/* Bouncy effect for next/prev transition */
+.slides {
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.25, 1.5, 0.5, 1); /* Adds bounce */
+}
+
+.slide {
+    min-width: 100%; /* Show one image at a time */
+    transition: 0.5s;
+}
+
+.slide img {
+    transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
+    width: 100%; /* Ensures the image stretches to fill the container's width */
+    height: 100%; /* Ensures the image stretches to fill the container's height */
+    object-fit: cover; /* Ensures the image is scaled and cropped to fit its container */
+}
+
+.container {
+    width: 100%; /* Container takes up full width of its parent */
+    max-width: 100%; /* Ensures no overflow */
+    overflow: hidden; /* Prevent content from overflowing the container */
+}
+
+@media (max-width: 768px) {
+    img {
+        width: 100%; /* Makes the image responsive */
+        height: auto; /* Maintains aspect ratio */
+    }
+}
+
+
+/* Previous and next buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
 }

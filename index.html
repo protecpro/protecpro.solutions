@@ -3,58 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protecpro.solutions</title>
-   <link rel="stylesheet" href="transparent-header.css">
+    <title>Image Slider with Top Navigation</title>
+    <link rel="stylesheet" href="transparent-header.css">
 </head>
 <body>
-    <header id="header">
-        <nav>
-            <ul>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#clients">Clients</a></li>
-                <li><a href="#partners">Partners</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <div class="image-container" id="image-container">
-        <img src="Front.png" alt="Fading Image">
+    <!-- Top Navigation Bar -->
+    <div class="navbar">
+        <ul>
+            <li><a href="#" data-slide="0">Home</a></li>
+            <li><a href="#" data-slide="1">About Us</a></li>
+            <li><a href="#" data-slide="2">Services</a></li>
+            <li><a href="#" data-slide="7">Contact Us</a></li>
+            <li><a href="#" data-slide="8">Our Partners</a></li>
+        </ul>
     </div>
 
-    <main>
-        <section id="about">
-            <h2>About Us</h2>
-            <img src="Slide2.PNG" class="responsive-image">
-        </section>
-        <section id="services">
-            <h2>Services</h2>
-            <img src="Slide7.PNG" class="responsive-image">
-            <img src="Slide8.PNG" class="responsive-image">
-            <img src="Slide10.PNG" class="responsive-image">
-            <img src="Slide11.PNG" class="responsive-image">
-            <img src="Slide13.PNG" class="responsive-image">
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <img src="Slide15.PNG" class="responsive-image">
-        </section>
-        <section id="clients">
-            <img src="Slide3.PNG" class="responsive-image">
-            <img src="Slide4.PNG" class="responsive-image">
-            <img src="Slide5.PNG" class="responsive-image">
-            <img src="Slide6.PNG" class="responsive-image">
-        </section>
-        <section id="partners">
-            <h2>Partners</h2>
-            <img src="Slide9.PNG" class="responsive-image">
-            <img src="Slide14.PNG" class="responsive-image">
-        </section>
-        <footer>
-            <p>&copy; 2024 Protecpro Phills. Inc. All rights reserved.</p>
-        </footer>
-    </main>
+    <!-- Image Slider Section -->
+    <div class="slider">
+        <div class="slides">
+            <!-- Each image as a slide -->
+            <div class="slide"><img src="Front.png" alt="Home Image"></div>  <!-- Home -->
+            <div class="slide"><img src="Slide2.PNG" alt="About Image"></div> <!-- About image 1 -->
+            <div class="slide"><img src="Slide7.PNG" alt="Services Image 1"></div> <!-- Services image 1 -->
+            <div class="slide"><img src="Slide8.PNG" alt="Services Image 2"></div> <!-- Services image 2 -->
+            <div class="slide"><img src="Slide10.PNG" alt="Services Image 3"></div> <!-- Services image 3 -->
+            <div class="slide"><img src="Slide11.PNG" alt="Services Image 4"></div> <!-- Services image 4 -->
+            <div class="slide"><img src="Slide13.PNG" alt="Services Image 5"></div> <!-- Services image 5 -->
+            <div class="slide"><img src="Slide15.PNG" alt="Contact Image"></div> <!-- Contact -->
+            <div class="slide"><img src="Slide9.PNG" alt="Parnter Image 1"></div> <!-- Partner Image 1 -->
+            <div class="slide"><img src="Slide14.PNG" alt="Parnter Image 2"></div> <!-- Partner Image 2 -->
+        </div>
+
+        <!-- Slider Controls -->
+        <button class="prev" onclick="plusSlides(-1)">❮</button>
+        <button class="next" onclick="plusSlides(1)">❯</button>
+    </div>
+
     <script src="Transparent-header.js"></script>
 </body>
 </html>
