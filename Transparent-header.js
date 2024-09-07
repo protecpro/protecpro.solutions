@@ -101,3 +101,58 @@ document.addEventListener('DOMContentLoaded', function () {
         navbar.classList.toggle('show');
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const slidesContainer = document.querySelector('.slides');
+    let startX = 0;
+    let endX = 0;
+
+    function handleTouchStart(event) {
+        startX = event.touches[0].clientX;
+    }
+
+    function handleTouchMove(event) {
+        endX = event.touches[0].clientX;
+    }
+
+    function handleTouchEnd() {
+        const threshold = 50; // Minimum distance in pixels to consider it a swipe
+        const swipeDistance = endX - startX;
+
+        // Swipe left (next slide)
+        if (swipeDistance < -threshold) {
+            nextSlide();
+        }
+        // Swipe right (previous slide)
+        else if (swipeDistance > threshold) {
+            previousSlide();
+        }
+    }
+
+    // Attach touch event listeners to the slider container
+    slidesContainer.addEventListener('touchstart', handleTouchStart, false);
+    slidesContainer.addEventListener('touchmove', handleTouchMove, false);
+    slidesContainer.addEventListener('touchend', handleTouchEnd, false);
+
+    // JavaScript code for the next/previous slide functions
+    function nextSlide() {
+        currentIndex++;
+        if (currentIndex >= totalSlides) {
+            currentIndex = 0;
+        }
+        showSlide(currentIndex);
+    }
+
+    function previousSlide() {
+        currentIndex--;
+        if (currentIndex < 0) {
+            currentIndex = totalSlides - 1;
+        }
+        showSlide(currentIndex);
+    }
+
+    function showSlide(index) {
+        const offset = -index * 100;
+        slidesContainer.style.transform = `translateX(${offset}%)`;
+    }
+});
